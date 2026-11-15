@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>妖怪百物語 百鬼夜行 (Hyakumonogatari: Night Parade of 100 Demons) 公式 — 盆栽企画 BONSAI PROJECT</title>
+
+  <!-- 1. 基本SEO・クローラー制御（毎回これをHPに合うようにカスタム.txt 準拠） -->
+  <meta name="description" content="『妖怪百物語 百鬼夜行』公式ページ。日本の古文献・郷土伝承に基づく全百話の怪談を一話ずつ縦書きで読み進め、百本のろうそくを吹き消していく古典怪談・百物語儀式アプリ。百本目の灯火が消えるとき、座敷の闇に小さな秘密が目を覚ます。Created by BONSAI PROJECT (盆栽企画).">
+  <meta name="keywords" content="妖怪百物語,百鬼夜行,百物語,鳥山石燕,怪談アプリ,妖怪図鑑,盆栽企画,BONSAI PROJECT,Hyakumonogatari,Yokai,Japanese Folklore,Androidアプリ">
+  <meta name="author" content="BONSAI PROJECT (盆栽企画)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#080706">
+
+  <!-- 2. 正規URL・多言語アノテーション -->
+  <link rel="canonical" href="https://mizotan.github.io/youkai100/">
+  <link rel="alternate" hreflang="ja" href="https://mizotan.github.io/youkai100/">
+  <link rel="alternate" hreflang="en" href="https://mizotan.github.io/youkai100/">
+  <link rel="alternate" hreflang="x-default" href="https://mizotan.github.io/youkai100/">
+
+  <!-- 3. ファビコン（Google検索結果一覧のアイコン表示用） -->
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- 4. OGP (Open Graph Protocol) / Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="妖怪百物語 百鬼夜行 — BONSAI PROJECT">
+  <meta property="og:title" content="妖怪百物語 百鬼夜行 — 灯火を一つ消すごとに、夜は深まる">
+  <meta property="og:description" content="古文献・民間伝承に基づく全百話の怪談と鳥山石燕調の墨絵妖怪図鑑。すべての灯火が消えたあとの暗闇には、まだ語られていない小さな秘密が潜んでいます。">
+  <meta property="og:url" content="https://mizotan.github.io/youkai100/">
+  <meta property="og:image" content="https://mizotan.github.io/youkai100/icon.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="妖怪百物語 百鬼夜行 — BONSAI PROJECT (盆栽企画)">
+  <meta name="twitter:description" content="百本のろうそくを吹き消す古典怪談儀式アプリ。最後の灯が消えたあとのことは、まだ秘密です。">
+  <meta name="twitter:image" content="https://mizotan.github.io/youkai100/icon.png">
+
+  <!-- 5. 構造化データ (JSON-LD / Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "妖怪百物語 百鬼夜行",
+        "alternateName": ["Hyakumonogatari: Night Parade of 100 Demons", "Youkai 100 Stories"],
+        "url": "https://mizotan.github.io/youkai100/",
+        "image": "https://mizotan.github.io/youkai100/icon.png",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Android, Web",
+        "description": "日本の古文献や民間伝承に基づく全百話の怪談を読み進め、百本のろうそくを吹き消していく百物語体験アプリ。鳥山石燕調の墨絵妖怪図鑑収録。",
+        "inLanguage": ["ja", "en"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "BONSAI PROJECT",
+          "alternateName": "盆栽企画",
+          "url": "https://mizotan.github.io/bonsaiproject/",
+          "logo": "https://mizotan.github.io/bonsaiproject/rogo.png",
+          "email": "bonsai.project.2026@gmail.com"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts (Shippori Mincho & Yuji Syuku) + ローカルフォントフォールバック -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+  <style>
+    /* アプリ同梱フォント（font/フォルダが存在する場合に優先適用） */
+    @font-face {
+      font-family: "GenkaiMinchoLocal";
+      src: url("font/genkai-mincho.ttf") format("truetype"),
+           url("www/font/genkai-mincho.ttf") format("truetype");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "ShipporiMinchoLocal";
+      src: url("font/ShipporiMincho-Regular.ttf") format("truetype"),
+           url("www/font/ShipporiMincho-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    :root {
+      /* 江戸和綴じ古文書 × 煤竹和紙 × 漆黒墨 × 血朱落款 カラーパレット */
+      --sumi-black: #070605;
+      --sumi-deep: #0e0c0a;
+      --sumi-panel: #15120f;
+      --washi-aged: #d8ceb8;
+      --washi-dim: #9e9482;
+      --washi-dark: #635b4e;
+      --shu-red: #a81c1c;
+      --shu-bright: #cf2929;
+      --aoandon-cyan: #48b8d0;
+      --candle-amber: #ff9d2e;
+      --border-washi: rgba(216, 206, 184, 0.18);
+      --border-shu: rgba(168, 28, 28, 0.45);
+
+      --font-title: "GenkaiMinchoLocal", "Yuji Syuku", "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      --font-mincho: "ShipporiMinchoLocal", "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--sumi-black);
+    }
+
+    body {
+      background-color: var(--sumi-black);
+      background-image:
+        radial-gradient(ellipse at 50% 12%, rgba(168, 28, 28, 0.09) 0%, transparent 65%),
+        radial-gradient(circle at 20% 80%, rgba(30, 24, 18, 0.45) 0%, transparent 50%),
+        repeating-linear-gradient(90deg, rgba(255, 245, 220, 0.012) 0px, rgba(255, 245, 220, 0.012) 1px, transparent 1px, transparent 4px);
+      color: var(--washi-aged);
+      font-family: var(--font-mincho);
+      line-height: 1.95;
+      font-size: 15px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background-color 1.2s ease, color 1.2s ease;
+    }
+
+    /* 3本のろうそくをすべて吹き消した時の「第百一話・青行燈モード」 */
+    body.hundred-first-night {
+      background-color: #020405;
+      background-image:
+        radial-gradient(circle at 50% 35%, rgba(45, 145, 175, 0.11) 0%, transparent 65%);
+    }
+
+    /* 漆黒×血錆のカスタムスクロールバー */
+    ::-webkit-scrollbar {
+      width: 7px;
+      background: #050404;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090807;
+      border-left: 1px solid rgba(216, 206, 184, 0.1);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #3a1212, #7a1c1c, #3a1212);
+      border-radius: 2px;
+      border: 1px solid #9e2424;
+    }
+
+    /* =====================================================================
+       右端固定：江戸和綴じ本（四つ目綴じ）の綴じ糸装飾（他姉妹アプリにない独自意匠）
+    ===================================================================== */
+    .watoji-spine {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 28px;
+      background: linear-gradient(90deg, rgba(12, 10, 8, 0.85), #040303);
+      border-left: 2px solid rgba(216, 206, 184, 0.22);
+      z-index: 90;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8vh 0;
+    }
+    .watoji-knot {
+      width: 100%;
+      height: 2px;
+      background: #b5aa96;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.9);
+      position: relative;
+    }
+    .watoji-knot::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: -4px;
+      width: 6px;
+      height: 10px;
+      border-radius: 50%;
+      background: #8c806c;
+      border: 1px solid #221d17;
+    }
+    .watoji-spine::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 1.5px;
+      background: repeating-linear-gradient(180deg, #b5aa96 0 18px, #595042 18px 22px);
+      opacity: 0.7;
+    }
+
+    @media (max-width: 640px) {
+      .watoji-spine { width: 14px; }
+      .watoji-spine::after { left: 4px; }
+    }
+
+    /* 上部固定ナビゲーション＆言語切替バー */
+    .top-utility-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 28px;
+      height: 52px;
+      background: rgba(7, 6, 5, 0.86);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-washi);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      z-index: 100;
+    }
+    @media (max-width: 640px) {
+      .top-utility-bar { right: 14px; padding: 0 14px; }
+    }
+    .top-brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--washi-dim);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      transition: color 0.2s;
+    }
+    .top-brand-mini:hover { color: var(--washi-aged); }
+    .top-brand-mini span.seal {
+      display: inline-block;
+      padding: 1px 6px;
+      background: var(--shu-red);
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      border-radius: 1px;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--border-washi);
+      color: var(--washi-dim);
+      font-family: var(--font-mincho);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: rgba(168, 28, 28, 0.25);
+      border-color: var(--shu-bright);
+      color: #fff;
+    }
+
+    /* 多言語表示制御 */
+    body[data-lang="ja"] .lang-en-only { display: none !important; }
+    body[data-lang="en"] .lang-ja-only { display: none !important; }
+
+    /* メインラッパー */
+    .emaki-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 84px 44px 100px 24px;
+      position: relative;
+    }
+    @media (max-width: 640px) {
+      .emaki-container { padding: 76px 26px 80px 16px; }
+    }
+
+    /* =====================================================================
+       1. ヒーローセクション：和本「題簽（だいせん）」＆縦書き巻頭言レイアウト
+    ===================================================================== */
+    .hero-emaki {
+      min-height: 82vh;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: center;
+      padding: 36px 0 64px;
+      border-bottom: 1px solid var(--border-washi);
+      position: relative;
+    }
+    @media (max-width: 720px) {
+      .hero-emaki {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+      }
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @media (max-width: 720px) {
+      .hero-left { align-items: center; order: 2; }
+    }
+
+    .app-crest-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .app-icon-frame {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      border: 1px solid var(--border-shu);
+      box-shadow: 0 10px 32px rgba(168, 28, 28, 0.28);
+      overflow: hidden;
+      background: #0c0a08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .app-icon-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .crest-meta {
+      text-align: left;
+    }
+    .crest-tag {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--shu-bright);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .crest-en-title {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--washi-dim);
+    }
+
+    .hero-catch {
+      font-family: var(--font-title);
+      font-size: clamp(24px, 4.2vw, 34px);
+      line-height: 1.55;
+      letter-spacing: 0.16em;
+      color: var(--washi-aged);
+      margin-bottom: 20px;
+      text-shadow: 0 0 18px rgba(168, 28, 28, 0.35);
+    }
+    .hero-catch strong {
+      color: var(--shu-bright);
+      font-weight: normal;
+    }
+
+    .hero-lead {
+      font-size: 14.5px;
+      color: var(--washi-dim);
+      line-height: 2.05;
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+      max-width: 520px;
+      text-align: justify;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    @media (max-width: 720px) {
+      .cta-group { justify-content: center; }
+    }
+    .btn-shu {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      background: linear-gradient(180deg, #8a1616 0%, #5e0d0d 100%);
+      border: 1px solid #c93030;
+      color: #f5efe6;
+      text-decoration: none;
+      font-family: var(--font-mincho);
+      font-size: 13.5px;
+      letter-spacing: 0.2em;
+      box-shadow: 0 6px 24px rgba(168, 28, 28, 0.35);
+      transition: all 0.25s ease;
+    }
+    .btn-shu:hover {
+      background: linear-gradient(180deg, #a81c1c 0%, #781212 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(207, 41, 41, 0.5);
+    }
+    .btn-washi-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: rgba(21, 18, 15, 0.8);
+      border: 1px solid var(--border-washi);
+      color: var(--washi-aged);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      transition: all 0.25s ease;
+    }
+    .btn-washi-outline:hover {
+      border-color: var(--washi-aged);
+      background: rgba(216, 206, 184, 0.08);
+    }
+
+    /* 右側：和本「題簽（だいせん）」縦書きタイトル柱 */
+    .hero-daisen-wrap {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 16px 22px;
+      background: linear-gradient(180deg, #120f0d 0%, #090807 100%);
+      border: 1px solid rgba(216, 206, 184, 0.26);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.95), 0 16px 48px rgba(0,0,0,0.85);
+      position: relative;
+    }
+    @media (max-width: 720px) {
+      .hero-daisen-wrap { order: 1; margin: 0 auto; }
+    }
+    /* 題簽の二重枠（和紙短冊） */
+    .daisen-strip {
+      background: #cfc4ae;
+      color: #14110e;
+      padding: 26px 14px 22px;
+      border: 2px solid #2b241d;
+      outline: 1px solid #cfc4ae;
+      outline-offset: 3px;
+      writing-mode: vertical-rl;
+      -webkit-writing-mode: vertical-rl;
+      font-family: var(--font-title);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .daisen-main {
+      font-size: 38px;
+      letter-spacing: 0.24em;
+      color: #14110e;
+      line-height: 1.15;
+    }
+    .daisen-sub {
+      font-size: 18px;
+      letter-spacing: 0.35em;
+      color: #7d1515;
+      margin-top: 14px;
+    }
+    .daisen-verse {
+      writing-mode: vertical-rl;
+      -webkit-writing-mode: vertical-rl;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      line-height: 2.1;
+      color: var(--washi-dim);
+      height: 310px;
+      padding-top: 6px;
+    }
+    .hanko-seal {
+      margin-top: 16px;
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid #a81c1c;
+      color: #a81c1c;
+      font-size: 10px;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: horizontal-tb;
+      font-weight: bold;
+      transform: rotate(-4deg);
+    }
+
+    /* =====================================================================
+       2. HP体験ギミック：「百物語・灯火の座」（3本のろうそく吹き消し体験）
+    ===================================================================== */
+    .interactive-sanctum {
+      margin: 64px 0;
+      padding: 36px 24px;
+      background: radial-gradient(circle at 50% 45%, #16110e 0%, #080706 85%);
+      border: 1px solid var(--border-washi);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.8s ease;
+    }
+    body.hundred-first-night .interactive-sanctum {
+      background: radial-gradient(circle at 50% 45%, #071920 0%, #020405 90%);
+      border-color: rgba(72, 184, 208, 0.4);
+      box-shadow: 0 0 40px rgba(72, 184, 208, 0.12);
+    }
+    .sanctum-caption {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--shu-bright);
+      margin-bottom: 8px;
+    }
+    body.hundred-first-night .sanctum-caption {
+      color: var(--aoandon-cyan);
+    }
+    .sanctum-title {
+      font-family: var(--font-title);
+      font-size: 21px;
+      letter-spacing: 0.2em;
+      margin-bottom: 10px;
+      color: var(--washi-aged);
+    }
+    .sanctum-desc {
+      font-size: 13px;
+      color: var(--washi-dim);
+      margin-bottom: 28px;
+    }
+
+    .three-candles-stage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: clamp(32px, 9vw, 72px);
+      height: 170px;
+      margin-bottom: 20px;
+    }
+    .demo-candle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.25s ease, opacity 0.4s ease;
+    }
+    .demo-candle:hover {
+      transform: scale(1.06);
+    }
+    .demo-flame {
+      width: 22px;
+      height: 44px;
+      border-radius: 50% 50% 35% 35% / 70% 70% 30% 30%;
+      background: radial-gradient(ellipse at 50% 70%, #ffffff 0%, #ffd066 35%, #e84810 75%, transparent 100%);
+      box-shadow: 0 0 22px rgba(255, 140, 30, 0.8), 0 -8px 34px rgba(220, 45, 0, 0.45);
+      animation: flame-sway 1.8s infinite alternate ease-in-out;
+      transform-origin: 50% 90%;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .demo-candle:nth-child(2) .demo-flame { animation-delay: -0.6s; }
+    .demo-candle:nth-child(3) .demo-flame { animation-delay: -1.2s; }
+
+    @keyframes flame-sway {
+      0%   { transform: rotate(-2.5deg) scaleY(0.96); }
+      50%  { transform: rotate(2deg) scaleY(1.05) scaleX(0.95); }
+      100% { transform: rotate(-1deg) scaleY(1.02); }
+    }
+    .demo-wick {
+      width: 2px;
+      height: 9px;
+      background: #222;
+    }
+    .demo-wax {
+      width: 24px;
+      height: 82px;
+      background: linear-gradient(90deg, #b8ae9c 0%, #e6dfd1 45%, #9c9282 100%);
+      border: 1px solid #332d26;
+      border-radius: 2px 2px 0 0;
+      position: relative;
+    }
+    .demo-stand {
+      width: 44px;
+      height: 6px;
+      background: #2b2520;
+      border-radius: 2px;
+    }
+    .demo-label {
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--washi-dim);
+    }
+
+    /* 消灯状態 */
+    .demo-candle.out {
+      opacity: 0.38;
+    }
+    .demo-candle.out .demo-flame {
+      opacity: 0;
+      transform: scale(0.1);
+      pointer-events: none;
+    }
+
+    /* 3本すべて消した時に浮かび上がる「第百一話」メッセージ */
+    .secret-101-reveal {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.9s ease, opacity 0.9s ease, margin 0.6s ease;
+    }
+    body.hundred-first-night .secret-101-reveal {
+      max-height: 240px;
+      opacity: 1;
+      margin-top: 18px;
+    }
+    .secret-101-box {
+      display: inline-block;
+      padding: 16px 26px;
+      border: 1px solid rgba(72, 184, 208, 0.5);
+      background: rgba(4, 18, 24, 0.85);
+      color: #bcecf7;
+      font-size: 13.5px;
+      letter-spacing: 0.14em;
+      line-height: 1.9;
+    }
+    .relight-btn {
+      margin-top: 12px;
+      background: transparent;
+      border: 1px solid rgba(216, 206, 184, 0.3);
+      color: var(--washi-dim);
+      font-family: var(--font-mincho);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      padding: 5px 14px;
+      cursor: pointer;
+    }
+    .relight-btn:hover { color: #fff; border-color: #fff; }
+
+    /* =====================================================================
+       3. セクション共通スタイル（和本見出し）
+    ===================================================================== */
+    .emaki-section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border-washi);
+    }
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 28px;
+      border-left: 3px solid var(--shu-red);
+      padding-left: 14px;
+    }
+    .sec-num {
+      font-family: var(--font-title);
+      font-size: 13px;
+      color: var(--shu-bright);
+      letter-spacing: 0.25em;
+    }
+    .sec-title {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3.6vw, 28px);
+      color: var(--washi-aged);
+      letter-spacing: 0.18em;
+      font-weight: normal;
+    }
+
+    /* 四つの章（儀式の特徴）グリッド */
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    @media (max-width: 680px) {
+      .chapter-grid { grid-template-columns: 1fr; }
+    }
+    .chapter-card {
+      background: var(--sumi-panel);
+      border: 1px solid var(--border-washi);
+      padding: 26px 24px;
+      position: relative;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .chapter-card:hover {
+      border-color: var(--border-shu);
+      transform: translateY(-2px);
+    }
+    .chapter-badge {
+      font-family: var(--font-title);
+      font-size: 12px;
+      color: var(--shu-bright);
+      letter-spacing: 0.25em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .chapter-card h3 {
+      font-family: var(--font-title);
+      font-size: 19px;
+      color: var(--washi-aged);
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      font-weight: normal;
+    }
+    .chapter-card p {
+      font-size: 13.5px;
+      color: var(--washi-dim);
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    /* =====================================================================
+       4. 収録怪異の抜粋絵巻（横スクロール・百鬼夜行プレビュー）
+    ===================================================================== */
+    .parade-scroll {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .yokai-specimen {
+      background: #0d0b09;
+      border: 1px solid rgba(216, 206, 184, 0.15);
+      padding: 18px;
+    }
+    .yokai-specimen-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed rgba(216, 206, 184, 0.2);
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .yokai-no {
+      font-family: monospace;
+      font-size: 11px;
+      color: var(--shu-bright);
+      letter-spacing: 0.15em;
+    }
+    .yokai-name {
+      font-family: var(--font-title);
+      font-size: 17px;
+      color: var(--washi-aged);
+      letter-spacing: 0.15em;
+    }
+    .yokai-origin {
+      font-size: 11px;
+      color: var(--washi-dark);
+      margin-bottom: 8px;
+    }
+    .yokai-excerpt {
+      font-size: 12.5px;
+      color: var(--washi-dim);
+      line-height: 1.8;
+    }
+
+    /* =====================================================================
+       5. クローズドテスト参加・QRコード案内枠（盆栽企画共通フォーマット）
+    ===================================================================== */
+    .tester-invitation {
+      background: linear-gradient(180deg, #171110 0%, #0d0a09 100%);
+      border: 1px solid var(--border-shu);
+      padding: 32px 26px;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+    @media (max-width: 680px) {
+      .tester-invitation {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+    .tester-qr-box {
+      background: #d8ceb8;
+      color: #14110e;
+      padding: 14px;
+      border: 2px solid #2b241d;
+      text-align: center;
+      width: 178px;
+      margin: 0 auto;
+    }
+    .tester-qr-box img {
+      width: 146px;
+      height: 146px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 6px;
+    }
+    .tester-qr-caption {
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      color: #1a1612;
+    }
+
+    /* 仕様・権利表記テーブル */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(216, 206, 184, 0.12);
+      text-align: left;
+      vertical-align: top;
+    }
+    .spec-table th {
+      width: 30%;
+      color: var(--washi-dim);
+      font-weight: normal;
+      letter-spacing: 0.12em;
+    }
+    .spec-table td {
+      color: var(--washi-aged);
+    }
+
+    /* =====================================================================
+       6. フッター（盆栽企画ポータル・姉妹アプリ相互リンク・AAID開示）
+    ===================================================================== */
+    .emaki-footer {
+      margin-top: 64px;
+      padding-top: 40px;
+      text-align: center;
+      color: var(--washi-dim);
+      font-size: 12.5px;
+    }
+    .bonsai-portal-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--washi-aged);
+      margin-bottom: 28px;
+      transition: transform 0.25s ease;
+    }
+    .bonsai-portal-link:hover {
+      transform: scale(1.04);
+    }
+    .bonsai-portal-link img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid var(--border-washi);
+      background: #000;
+    }
+    .sister-apps-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 18px;
+      list-style: none;
+      margin: 24px 0 32px;
+      padding: 16px;
+      border-top: 1px dashed rgba(216, 206, 184, 0.15);
+      border-bottom: 1px dashed rgba(216, 206, 184, 0.15);
+    }
+    .sister-apps-nav a {
+      color: var(--washi-dim);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .sister-apps-nav a:hover {
+      color: var(--shu-bright);
+    }
+    .legal-disclosure {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      font-size: 11.5px;
+      color: var(--washi-dark);
+      line-height: 1.85;
+    }
+  </style>
+</head>
+<body data-lang="ja">
+
+  <!-- 右端固定：江戸和綴じ本（四つ目綴じ）の綴じ糸意匠 -->
+  <div class="watoji-spine" aria-hidden="true">
+    <div class="watoji-knot"></div>
+    <div class="watoji-knot"></div>
+    <div class="watoji-knot"></div>
+    <div class="watoji-knot"></div>
+  </div>
+
+  <!-- 上部バー（盆栽企画ポータル導線 ＆ 日英言語切替） -->
+  <header class="top-utility-bar">
+    <a href="https://mizotan.github.io/bonsaiproject/" class="top-brand-mini">
+      <span class="seal">盆栽企画</span>
+      <span>BONSAI PROJECT PORTAL</span>
+    </a>
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button type="button" class="lang-btn active" id="btnLangJa">日本語</button>
+      <button type="button" class="lang-btn" id="btnLangEn">EN</button>
+    </div>
+  </header>
+
+  <main class="emaki-container">
+
+    <!-- ===================================================================
+         1. ヒーローセクション（和本題簽 × 縦書き巻頭言）
+    =================================================================== -->
+    <section class="hero-emaki">
+      <div class="hero-left">
+        <div class="app-crest-row">
+          <div class="app-icon-frame">
+            <img src="icon.png" alt="妖怪百物語 百鬼夜行 アプリアイコン"
+                 onerror="if(!this.t1){this.t1=true;this.src='www/img/icon.png';}else if(!this.t2){this.t2=true;this.src='512x512_icon.png';}else{this.src='rogo.png';}">
+          </div>
+          <div class="crest-meta">
+            <span class="crest-tag">Japanese Folklore &amp; Ritual Horror App</span>
+            <div class="crest-en-title">HYAKUMONOGATARI — Night Parade of 100 Demons</div>
+          </div>
+        </div>
+
+        <h1 class="hero-catch lang-ja-only">
+          一話語るごとに、灯を一つ消す。<br>
+          最後の闇に潜むものは、<strong>まだ秘密</strong>。
+        </h1>
+        <h1 class="hero-catch lang-en-only">
+          One tale told, one flame blown out.<br>
+          What awaits in the final dark is <strong>still a secret</strong>.
+        </h1>
+
+        <p class="hero-lead lang-ja-only">
+          『遠野物語』『画図百鬼夜行』『今昔物語集』『耳嚢』——日本各地に実在する古文献・民間伝承から厳選した怪談を、縦書きの古文書と鳥山石燕調の墨絵で辿る百物語儀式アプリケーション。一話読み終えるごとに座敷の蝋燭を一本ずつ吹き消していく静謐な夜をお楽しみください。すべての灯が消えたあとに何が起きるのかは、まだ内緒です。
+        </p>
+        <p class="hero-lead lang-en-only">
+          An interactive Japanese "Hyakumonogatari" (100 Ghost Stories) ritual application. Read authentic folklore tales drawn from classical texts such as Tono Monogatari and Gazu Hyakki Yagyo, and blow out a flickering wax candle after each tale. What happens after the final flame goes out... is still a secret.
+        </p>
+
+        <div class="cta-group">
+          <a href="#tester-section" class="btn-shu">
+            <span class="lang-ja-only">Google Play テスト版・公開情報 ↓</span>
+            <span class="lang-en-only">Get on Google Play / Closed Test ↓</span>
+          </a>
+          <a href="https://mizotan.github.io/bonsaiproject/" class="btn-washi-outline">
+            <span class="lang-ja-only">盆栽企画 公式ポータル →</span>
+            <span class="lang-en-only">BONSAI PROJECT Portal →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 和本「題簽（だいせん）」縦書き柱 -->
+      <div class="hero-daisen-wrap" aria-label="妖怪百物語 百鬼夜行 縦書き題簽">
+        <div class="daisen-strip">
+          <div class="daisen-main">妖怪百物語</div>
+          <div class="daisen-sub">百鬼夜行</div>
+          <div class="hanko-seal">盆栽<br>企画</div>
+        </div>
+        <div class="daisen-verse">
+          一話語るごとに灯を一つ消す。<br>
+          揺らめく和蝋燭の煙の向こう、<br>
+          闇の奥の秘め事は夜明け前に消える。
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         2. インタラクティブ体験ギミック：「百物語・灯火の座（三灯体験）」
+    =================================================================== -->
+    <section class="interactive-sanctum" aria-labelledby="sanctum-heading">
+      <div class="sanctum-caption">INTERACTIVE RITUAL PREVIEW</div>
+      <h2 class="sanctum-title" id="sanctum-heading">
+        <span class="lang-ja-only">【体験】三本の灯火を吹き消してみてください</span>
+        <span class="lang-en-only">[Interactive] Tap the three candles to extinguish them</span>
+      </h2>
+      <p class="sanctum-desc">
+        <span class="lang-ja-only">※それぞれのろうそくをタップすると火が消えます。三本すべて消すと……</span>
+        <span class="lang-en-only">* Tap each candle flame to blow it out. When all three go dark...</span>
+      </p>
+
+      <div class="three-candles-stage">
+        <div class="demo-candle" data-candle="1" role="button" tabindex="0" aria-label="第一の灯火">
+          <div class="demo-flame"></div>
+          <div class="demo-wick"></div>
+          <div class="demo-wax"></div>
+          <div class="demo-stand"></div>
+          <div class="demo-label">壱ノ灯</div>
+        </div>
+        <div class="demo-candle" data-candle="2" role="button" tabindex="0" aria-label="第二の灯火">
+          <div class="demo-flame"></div>
+          <div class="demo-wick"></div>
+          <div class="demo-wax"></div>
+          <div class="demo-stand"></div>
+          <div class="demo-label">弐ノ灯</div>
+        </div>
+        <div class="demo-candle" data-candle="3" role="button" tabindex="0" aria-label="第百の灯火">
+          <div class="demo-flame"></div>
+          <div class="demo-wick"></div>
+          <div class="demo-wax"></div>
+          <div class="demo-stand"></div>
+          <div class="demo-label">参ノ灯</div>
+        </div>
+      </div>
+
+      <div class="secret-101-reveal" id="secret101Reveal">
+        <div class="secret-101-box">
+          <p class="lang-ja-only">
+            <strong>✦ 暗闇の中に、小さな秘密がひとつ ✦</strong><br>
+            その先は、まだ内緒です。<br>
+            夜明けが来る前に、アプリの中で確かめてみてください。
+          </p>
+          <p class="lang-en-only">
+            <strong>✦ A small, eerie secret inside the dark. ✦</strong><br>
+            It's still a secret.<br>
+            Gone before the morning comes.
+          </p>
+          <button type="button" class="relight-btn" id="btnRelightCandles">
+            <span class="lang-ja-only">再び灯をともす</span>
+            <span class="lang-en-only">Relight the candles</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         3. 四つの章（アプリの特徴・儀式構造）
+    =================================================================== -->
+    <section class="emaki-section" aria-labelledby="features-heading">
+      <div class="sec-head">
+        <span class="sec-num">壱之巻</span>
+        <h2 class="sec-title" id="features-heading">
+          <span class="lang-ja-only">百物語の四構造</span>
+          <span class="lang-en-only">Four Pillars of the Ritual</span>
+        </h2>
+      </div>
+
+      <div class="chapter-grid">
+        <article class="chapter-card">
+          <span class="chapter-badge">其ノ壱 ／ ろうそく部屋</span>
+          <h3 class="lang-ja-only">出典明記・縦書き古文書の怪談</h3>
+          <h3 class="lang-en-only">Authentic Folklore in Vertical Script</h3>
+          <p class="lang-ja-only">
+            北海道のコロポックルから沖縄のキジムナーまで、すべての怪談に歴史的文献名・伝承地を明記。「しっぽり明朝」と「源界明朝」を組み合わせた縦書き紙面で、一話読了するごとに怪異の墨絵が浮かび上がり、揺らめく和蝋燭が煙を立てて消えていきます。
+          </p>
+          <p class="lang-en-only">
+            From Hokkaido's Koropokkuru to Okinawa's Kijimuna, every story cites its historical source and region. After each tale, a sumi-e yokai illustration emerges and one flickering candle goes out in smoke.
+          </p>
+        </article>
+
+        <article class="chapter-card">
+          <span class="chapter-badge">其ノ弐 ／ 妖怪図鑑</span>
+          <h3 class="lang-ja-only">鳥山石燕調の墨絵コレクション</h3>
+          <h3 class="lang-en-only">Sumi-e Yokai Compendium</h3>
+          <p class="lang-ja-only">
+            吹き消した蝋燭は「妖怪図鑑」に静かな蝋の塊として並びます。タップすると再び淡い灯火がともり、和紙に描かれた妖怪の墨絵と伝承解説をいつでも振り返ることができます。夜の進行とともに、図鑑の佇まいにも少しずつ変化が訪れます。
+          </p>
+          <p class="lang-en-only">
+            Extinguished candles line the Compendium. Tap any candle to relight its flame and view sumi-e ink illustrations and folklore notes. As the night deepens, subtle changes quietly unfold.
+          </p>
+        </article>
+
+        <article class="chapter-card">
+          <span class="chapter-badge">其ノ参 ／ 秘め事</span>
+          <h3 class="lang-ja-only">暗闇の奥に、小さな秘密がひとつ。</h3>
+          <h3 class="lang-en-only">A small, eerie secret inside.</h3>
+          <p class="lang-ja-only">
+            それはまだ秘密です。<br>
+            真夜中にすべての灯火が消えるとき、時間とともに紛れて消えてゆく特別な体験が待っています。
+          </p>
+          <p class="lang-en-only">
+            It's still a secret.<br>
+            Discover the quiet mystery at midnight—gone before the morning comes.
+          </p>
+        </article>
+
+        <article class="chapter-card">
+          <span class="chapter-badge">其ノ肆 ／ 簡易百物語 ＆ 不浄の調伏</span>
+          <h3 class="lang-ja-only">高速連鎖消灯モードと九字護身法</h3>
+          <h3 class="lang-en-only">Fast Ritual &amp; Kuji-Kiri Exorcism</h3>
+          <p class="lang-ja-only">
+            一度百話を完遂すると、指のスライドで100本のろうそくを一気に吹き消せる隠しモード「簡易 百物語」が解放されます。また、「お断り」画面にはカメラ使用のON/OFF切り替えと、臨・兵・闘・者・皆・陣・烈・在・前の九字を切って不浄を祓う調伏機能を備えています。
+          </p>
+          <p class="lang-en-only">
+            Clearing all 100 stories unlocks "Fast Hyakumonogatari" mode to sweep and blow out 100 candles in seconds. Includes a camera permission toggle and a 9-cut "Kuji-Kiri" exorcism ritual.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         4. 収録百鬼夜行・古文献抜粋プレビュー
+    =================================================================== -->
+    <section class="emaki-section" aria-labelledby="parade-heading">
+      <div class="sec-head">
+        <span class="sec-num">弐之巻</span>
+        <h2 class="sec-title" id="parade-heading">
+          <span class="lang-ja-only">百鬼夜行 収録怪異録（抜粋）</span>
+          <span class="lang-en-only">Selected Yokai Archives</span>
+        </h2>
+      </div>
+
+      <div class="parade-scroll">
+        <div class="yokai-specimen">
+          <div class="yokai-specimen-head">
+            <span class="yokai-no">第006話</span>
+            <span class="yokai-name">マヨイガ</span>
+          </div>
+          <div class="yokai-origin">柳田國男『遠野物語』（1910年） ／ 岩手県遠野市</div>
+          <p class="yokai-excerpt">山中で道に迷った者の前に現れる無人の屋敷。持ち帰った器物は富をもたらすが、夜半には本来の主の濡れた足跡を座敷の奥へと招き入れる。</p>
+        </div>
+
+        <div class="yokai-specimen">
+          <div class="yokai-specimen-head">
+            <span class="yokai-no">第042話</span>
+            <span class="yokai-name">稲生物怪録の怪</span>
+          </div>
+          <div class="yokai-origin">『稲生物怪録』（1749年） ／ 広島県三次市</div>
+          <p class="yokai-excerpt">寛延二年七月、三次の若侍・稲生平太郎の屋敷を三十日間にわたり襲い続けた無数の怪異。畳の上には氷のように冷たい巨大な濡れ掌の跡が残る。</p>
+        </div>
+
+        <div class="yokai-specimen">
+          <div class="yokai-specimen-head">
+            <span class="yokai-no">第009話</span>
+            <span class="yokai-name">雪女</span>
+          </div>
+          <div class="yokai-origin">小泉八雲『怪談』（1904年） ／ 山形県・武蔵国ほか</div>
+          <p class="yokai-excerpt">吹雪の夜に現れ、見たことを死ぬまで誰にも語らぬよう誓わせる白い女。約を破れば、最も身近な場所から新雪を踏む音が響く。</p>
+        </div>
+
+        <div class="yokai-specimen">
+          <div class="yokai-specimen-head">
+            <span class="yokai-no">第049話</span>
+            <span class="yokai-name">化け猫</span>
+          </div>
+          <div class="yokai-origin">『佐賀怪猫伝』・鍋島家騒動伝承 ／ 佐賀県佐賀市</div>
+          <p class="yokai-excerpt">恨みを抱いて死んだ者の血を舐め、夜半の寝所で二本足で立ち上がり、行灯の皿の油を長い舌で舐め取る巨猫の怪。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         5. クローズドテスト参加・Google Play 公開情報（QRコード付き）
+    =================================================================== -->
+    <section class="emaki-section" id="tester-section" aria-labelledby="tester-heading">
+      <div class="sec-head">
+        <span class="sec-num">参之巻</span>
+        <h2 class="sec-title" id="tester-heading">
+          <span class="lang-ja-only">アプリ入手・クローズドテストのご案内</span>
+          <span class="lang-en-only">Download &amp; Closed Testing</span>
+        </h2>
+      </div>
+
+      <div class="tester-invitation">
+        <div>
+          <p style="font-size:14px; color:var(--washi-aged); margin-bottom:14px;">
+            <span class="lang-ja-only">
+              現在『妖怪百物語 百鬼夜行』は Google Play ストア公開に向けたクローズドテストおよび最終調整を実施しております。テストにご参加いただける方は、下記の参加用リンクまたはQRコードよりアクセスしてください。
+            </span>
+            <span class="lang-en-only">
+              "Hyakumonogatari: Night Parade of 100 Demons" is currently in Google Play closed testing. Testers can join via the links or QR code below.
+            </span>
+          </p>
+
+          <div class="cta-group" style="margin-top:18px;">
+            <a href="https://play.google.com/apps/testing/com.bonsai.y100" class="btn-shu" target="_blank" rel="noopener noreferrer">
+              For Closed Testers (Web参加登録) →
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.bonsai.y100" class="btn-washi-outline" target="_blank" rel="noopener noreferrer">
+              Google Play Store URL →
+            </a>
+          </div>
+
+          <p style="font-size:12px; color:var(--washi-dim); margin-top:16px;">
+            ※クローズドテストへの参加ご希望の方は <strong>bonsai.project.2026@gmail.com</strong> までご自身のGmailアドレスをお送りください。
+          </p>
+        </div>
+
+        <div class="tester-qr-box">
+          <img src="qr_y100.png" alt="参加者スマホ用QRコード"
+               onerror="this.src='rogo.png';">
+          <div class="tester-qr-caption">参加者スマホ用QRコード</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         6. 作品仕様・カメラ開示・フォント権利表記
+    =================================================================== -->
+    <section class="emaki-section" aria-labelledby="spec-heading">
+      <div class="sec-head">
+        <span class="sec-num">肆之巻</span>
+        <h2 class="sec-title" id="spec-heading">
+          <span class="lang-ja-only">仕様・注意事項・権利表記</span>
+          <span class="lang-en-only">Specifications &amp; Credits</span>
+        </h2>
+      </div>
+
+      <table class="spec-table">
+        <tbody>
+          <tr>
+            <th>タイトル / Title</th>
+            <td>妖怪百物語 百鬼夜行 (Hyakumonogatari: Night Parade of 100 Demons)</td>
+          </tr>
+          <tr>
+            <th>ジャンル / Genre</th>
+            <td>古典怪談百物語・妖怪図鑑・ジョークカメラアプリ (Folklore Horror &amp; Joke Camera App)</td>
+          </tr>
+          <tr>
+            <th>対応環境 / OS</th>
+            <td>Android (縦画面固定 / Portrait Mode)</td>
+          </tr>
+          <tr>
+            <th>カメラ権限とプライバシー</th>
+            <td>
+              本作はジョークアプリであり、作中の特別な演出のためにカメラ権限を使用します（アプリ内の「お断り」設定からいつでも有効／無効を切り替え可能）。カメラ映像および記録データは端末内のローカル領域にのみ保存され、外部サーバーへ送信・収集されることは一切ありません。
+            </td>
+          </tr>
+          <tr>
+            <th>フォント権利表記 / Font Licenses</th>
+            <td>
+              ■ しっぽり明朝 (Shippori Mincho)<br>
+              Copyright 2020 The Shippori Mincho Project Authors (https://github.com)<br>
+              Licensed under the SIL Open Font License, Version 1.1.<br><br>
+              ■ 源界明朝 (Genkai Mincho)<br>
+              Copyright (c) 2018, Flop Design (https://flopdesign.com)<br>
+              Licensed under the SIL Open Font License, Version 1.1.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===================================================================
+         7. フッター（盆栽企画ポータル・姉妹アプリ相互リンク・リーガル導線）
+    =================================================================== -->
+    <footer class="emaki-footer">
+      <a href="https://mizotan.github.io/bonsaiproject/" class="bonsai-portal-link" title="BONSAI PROJECT Official Portal">
+        <img src="rogo.png" alt="盆栽企画 presents (BONSAI PROJECT)"
+             onerror="this.src='www/img/rogo.png';">
+        <div>
+          <div style="font-family:var(--font-title); font-size:16px; letter-spacing:0.25em;">盆栽企画 presents</div>
+          <div style="font-size:10px; color:var(--washi-dark); letter-spacing:0.25em;">BONSAI PROJECT OFFICIAL — 日本より AI をこめて</div>
+        </div>
+      </a>
+
+      <!-- 兄弟姉妹アプリ公式ページ相互リンク -->
+      <ul class="sister-apps-nav" aria-label="BONSAI PROJECT Applications">
+        <li><a href="https://mizotan.github.io/bonsaiproject/">Portal Top</a></li>
+        <li><a href="https://mizotan.github.io/ghostsearchcamera/">Ghost Search Camera</a></li>
+        <li><a href="https://mizotan.github.io/halloweenluckydraw/">Halloween lucky draw</a></li>
+        <li><a href="https://mizotan.github.io/daphne/">Daphne ~ Flowers Human</a></li>
+        <li><a href="https://mizotan.github.io/pipo98/">Pi-po Ver.98</a></li>
+        <li><a href="https://mizotan.github.io/citypoptune/">City Pop Tune</a></li>
+        <li><a href="https://mizotan.github.io/privacypolicy/">Privacy Policy</a></li>
+        <li><a href="https://mizotan.github.io/terms/">Terms of Service</a></li>
+      </ul>
+
+      <div class="legal-disclosure">
+        作成中のAndroidアプリのクローズドテストに参加していただける方を募集しています。<br>
+        ご協力いただける方は <strong>bonsai.project.2026@gmail.com</strong> までGmailアドレスをお送りください。<br>
+        本アプリは無料アプリ（広告支援型アプリ）として提供されています。アプリ内では広告配信および効果測定を目的として、端末の広告ID（AAID）を自動的に収集・利用することがあります。<br>
+        <span lang="en">Free App (Ad-supported). Within the app, your device's Advertising ID (AAID) may be automatically collected and used to deliver relevant ads and measure their performance.</span>
+      </div>
+
+      <p style="font-size:11px; color:var(--washi-dark); letter-spacing:0.2em;">
+        &copy; 2026 BONSAI PROJECT (盆栽企画) All Rights Reserved.
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    (function() {
+      // 1. 日英言語切替
+      const btnJa = document.getElementById('btnLangJa');
+      const btnEn = document.getElementById('btnLangEn');
+      btnJa.addEventListener('click', () => {
+        document.body.setAttribute('data-lang', 'ja');
+        btnJa.classList.add('active');
+        btnEn.classList.remove('active');
+      });
+      btnEn.addEventListener('click', () => {
+        document.body.setAttribute('data-lang', 'en');
+        btnEn.classList.add('active');
+        btnJa.classList.remove('active');
+      });
+
+      // 2. 三本の灯火インタラクティブ吹き消し体験（Web Audio API 吹き消し音つき）
+      let audioCtx = null;
+      function playBlowSound() {
+        try {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return;
+          if (!audioCtx) audioCtx = new AC();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          const now = audioCtx.currentTime;
+          const dur = 0.32;
+          const len = Math.floor(audioCtx.sampleRate * dur);
+          const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+          const d = buf.getChannelData(0);
+          for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+
+          const src = audioCtx.createBufferSource();
+          src.buffer = buf;
+          const filter = audioCtx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(780, now);
+          filter.frequency.exponentialRampToValueAtTime(90, now + dur);
+
+          const gain = audioCtx.createGain();
+          gain.gain.setValueAtTime(0.22, now);
+          gain.gain.exponentialRampToValueAtTime(0.005, now + dur);
+
+          src.connect(filter);
+          filter.connect(gain);
+          gain.connect(audioCtx.destination);
+          src.start(now);
+          src.stop(now + dur);
+        } catch (e) {}
+      }
+
+      const candles = document.querySelectorAll('.demo-candle');
+      const btnRelight = document.getElementById('btnRelightCandles');
+
+      function checkAllOut() {
+        const allOut = Array.from(candles).every(c => c.classList.contains('out'));
+        if (allOut) {
+          document.body.classList.add('hundred-first-night');
+        } else {
+          document.body.classList.remove('hundred-first-night');
+        }
+      }
+
+      candles.forEach(candle => {
+        candle.addEventListener('click', () => {
+          if (!candle.classList.contains('out')) {
+            candle.classList.add('out');
+            playBlowSound();
+            checkAllOut();
+          }
+        });
+      });
+
+      if (btnRelight) {
+        btnRelight.addEventListener('click', () => {
+          candles.forEach(c => c.classList.remove('out'));
+          document.body.classList.remove('hundred-first-night');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
